@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Results</title>
+<style>
+body {
+  background:#0f172a;
+  color:white;
+  font-family:Arial;
+  padding:40px;
+}
+table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+th, td {
+  padding:12px;
+  border-bottom:1px solid #334155;
+}
+th {
+  text-align:left;
+  color:#38bdf8;
+}
+</style>
+</head>
+<body>
+
+<h1>📊 Voting Results</h1>
+<button onclick="loadResults()">Load Results</button>
+
+<table id="resultsTable">
+  <thead>
+    <tr>
+      <th>Barber</th>
+      <th>Votes</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+async function loadResults() {
+  const res = await fetch('/.netlify/functions/results', {
+    headers: {
+      'x-admin-key': prompt('Enter admin key')
+    }
+  })
+
+  if (!res.ok) {
+    alert('Unauthorized')
+    return
+  }
+
+  const data = await res.json()
+  const tbody = document.querySelector('#resultsTable tbody')
+  tbody.innerHTML = ''
+
+  Object.entries(data).forEach(([name, count]) => {
+    tbody.innerHTML += `
+      <tr>
+        <td>${name}</td>
+        <td>${count}</td>
+      </tr>
+    `
+  })
+}
+</script>
+
+</body>
+</html>
