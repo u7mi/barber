@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://i.ibb.co/TBFsrWWW/vintage-barber-shop-logo-vector-illustration-template-388538-original.gif">
-
-    <title>پێشبڕکێی دەلاکەکانی کوردستان</title>
+    <title>دەنگدان کۆتایی هات</title>
     <style>
         * {
             margin: 0;
@@ -17,225 +15,99 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(to bottom, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
             direction: rtl;
         }
 
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
+            max-width: 700px;
+            width: 100%;
         }
 
         header {
             text-align: center;
             margin-bottom: 40px;
-            padding: 40px 20px;
         }
 
         h1 {
             color: #ffffff;
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 15px;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
             font-weight: 700;
         }
 
         .subtitle {
             color: #ffd700;
-            font-size: 1.5rem;
-            margin-top: 10px;
-            font-weight: 600;
+            font-size: 1.3rem;
         }
 
-        .sponsor {
-            background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            display: inline-block;
-            margin-top: 20px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 8px 25px rgba(238, 90, 111, 0.4);
-        }
-
-        .voting-form {
-            background: rgba(255, 255, 255, 0.05);
+        .main-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
 
-        .barbers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            color: #ffffff;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
             margin-bottom: 30px;
         }
 
-        .barber-item {
-            background: rgba(255, 255, 255, 0.95);
+        .countdown-item {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #ffd700;
             border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            border: 3px solid transparent;
+            padding: 20px;
+            min-width: 90px;
         }
 
-        .barber-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-        }
-
-        .barber-item.selected {
-            border-color: #ffd700;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
-        }
-
-        .barber-item input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-        }
-
-        .barber-label {
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .barber-image-container {
-            width: 120px;
-            height: 120px;
-            margin: 20px auto 0;
-            overflow: hidden;
-            background: #f0f0f0;
-            position: relative;
-            border-radius: 50%;
-            border: 4px solid #e0e0e0;
-        }
-
-        .barber-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .barber-item:hover .barber-image {
-            transform: scale(1.05);
-        }
-
-        .check-icon {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            background: #ffd700;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            z-index: 10;
-        }
-
-        .barber-item.selected .check-icon {
-            display: flex;
-        }
-
-        .barber-item.selected .barber-image-container {
-            border-color: #ffd700;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-        }
-
-        .check-icon::after {
-            content: '✓';
-            color: #1a1a2e;
-            font-size: 20px;
+        .countdown-number {
+            font-size: 2.5rem;
             font-weight: bold;
+            color: #ffd700;
+            display: block;
         }
 
-        .barber-name {
-            padding: 15px 10px 20px;
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1a1a2e;
-            background: white;
+        .countdown-text {
+            font-size: 1rem;
+            color: #aaa;
+            margin-top: 5px;
         }
 
         .note-section {
             background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
-            padding: 25px 30px;
+            padding: 20px 25px;
             border-radius: 15px;
-            margin: 30px 0;
+            margin-top: 30px;
             box-shadow: 0 10px 30px rgba(238, 90, 111, 0.3);
-        }
-
-        .note-title {
-            color: #fff;
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 15px;
         }
 
         .note-text {
             color: #fff;
             font-size: 1.05rem;
-            line-height: 1.9;
-        }
-
-        .submit-section {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .submit-btn {
-            background: linear-gradient(90deg, #ffd700, #ffed4e);
-            color: #1a1a2e;
-            border: none;
-            padding: 18px 60px;
-            font-size: 1.4rem;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
-            transition: all 0.3s ease;
-            font-weight: bold;
-        }
-
-        .submit-btn:hover:not(:disabled) {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
-        }
-
-        .submit-btn:disabled {
-            background: #555;
-            color: #999;
-            cursor: not-allowed;
-            box-shadow: none;
-        }
-
-        .success-message {
-            background: linear-gradient(90deg, #00b894, #00cec9);
-            color: white;
-            padding: 20px 30px;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 1.3rem;
-            margin: 20px auto;
-            max-width: 600px;
-            box-shadow: 0 10px 30px rgba(0, 184, 148, 0.4);
-            display: none;
-            font-weight: 600;
-        }
-
-        @media (max-width: 1024px) {
-            .barbers-grid {
-                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            }
+            line-height: 1.8;
         }
 
         @media (max-width: 768px) {
@@ -244,30 +116,28 @@
             }
 
             .subtitle {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
 
-            .barbers-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 15px;
+            .main-card {
+                padding: 30px 25px;
             }
 
-            .barber-image-container {
-                width: 100px;
-                height: 100px;
+            .icon {
+                font-size: 3rem;
             }
 
-            .barber-name {
-                font-size: 1rem;
-                padding: 12px 8px 15px;
+            .message {
+                font-size: 1.1rem;
             }
 
-            .note-text {
-                font-size: 0.95rem;
+            .countdown-item {
+                min-width: 80px;
+                padding: 15px;
             }
 
-            .voting-form {
-                padding: 20px;
+            .countdown-number {
+                font-size: 2rem;
             }
         }
 
@@ -280,17 +150,46 @@
                 font-size: 1.5rem;
             }
 
-            header {
-                padding: 20px 10px;
+            .subtitle {
+                font-size: 1rem;
             }
 
-            .barbers-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .main-card {
+                padding: 25px 20px;
             }
 
-            .submit-btn {
-                padding: 15px 40px;
-                font-size: 1.2rem;
+            .icon {
+                font-size: 2.5rem;
+            }
+
+            .message {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+
+            .countdown {
+                gap: 10px;
+            }
+
+            .countdown-item {
+                min-width: 70px;
+                padding: 12px;
+            }
+
+            .countdown-number {
+                font-size: 1.8rem;
+            }
+
+            .countdown-text {
+                font-size: 0.9rem;
+            }
+
+            .note-section {
+                padding: 18px 20px;
+            }
+
+            .note-text {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -298,172 +197,75 @@
 <body>
     <div class="container">
         <header>
-            <h1>🔥 پێشبڕکێی دەلاکانی کوردستان 🔥</h1>
-            <p class="subtitle">باشترین دەلاک بۆ ساڵی ٢٠٢٥ هەڵبژێرە</p>
-            <div class="sponsor">Sponsored by Vjr Brand</div>
-            <p class="subtitle">لە بەرواری 2026/1/5 سەرژمێری بڵاودەکریتەوە</p>
+            <h1>⏰ دەنگدان کۆتایی هات</h1>
+            <p class="subtitle">چاوەڕوانی ئەنجامەکان بن</p>
         </header>
 
-        <div class="voting-form">
-            <div class="barbers-grid" id="barbersGrid">
-                <!-- Barber items will be generated here -->
+        <div class="main-card">
+            <div class="icon">⌛</div>
+            
+            <div class="message">
+                سوپاس بۆ بەشداریکردنتان
+                <br>
+                ئەنجامەکان بەزووانە دەردەکەون
             </div>
 
-            <div class="success-message" id="successMessage">
-                ✅ سوپاس! دەنگەکەت بە سەرکەوتوویی تۆمارکرا
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">0</span>
+                    <span class="countdown-text">ڕۆژ</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">0</span>
+                    <span class="countdown-text">کاتژمێر</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">0</span>
+                    <span class="countdown-text">خولەک</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">0</span>
+                    <span class="countdown-text">چرکە</span>
+                </div>
             </div>
 
-            <div class="submit-section">
-                <button class="submit-btn" id="submitBtn" disabled>دەنگدان</button>
+            <div class="note-section">
+                <div class="note-text">
+                    ئەنجامەکان دوای کۆتایی هاتنی دەنگدان و پشکنینی تێکڕای هەموو دەنگەکان بڵاودەکرێنەوە. براوەکان بە پێی ژمارەی دەنگەکان ڕیزبەند دەکرێن.
+                </div>
             </div>
-        </div>
-
-        <div class="note-section">
-            <div class="note-title">تێبینی:</div>
-            <div class="note-text">
-                دەلاکی کورد پێویستی بە پێشبڕکێ نیە هەمیشە یەکەمەکانی جیهانن بەڵام ئەم پێشبڕکێیە تایبەتە بە دەلاکە کوردەکان. هەڵبژاردنی دەلاکەکانیش بەپێی ئەزمون و ناوبانگی دەلاکەکەیە لە هەر شارێکی کوردستان بێت. ئەم سایتە لەلایەن سپۆنسەری بڕاندی Vjr بەڕێوە دەبرێت. براوە دەبێتە خاوەن خەڵاتی بەنرخ.
-            </div>
-            <footer style="
-  position:fixed;
-  bottom:0;
-  width:100%;
-  
-  color:#aaa;
-  text-align:center;
-  padding:12px;
-  font-family:Arial;">
-  Powered by <a href="https://snapchat.com/add/mrx_cod4r" target="_blank" style="color:#00bfff;">
-    mrx_cod4r
-  </a>
-</footer>
-
         </div>
     </div>
 
     <script>
-        const barbers = [
-            { id: 1, name: 'mira.barber', image: 'https://raw.githubusercontent.com/6y6qa/volting/refs/heads/main/7334533090053718034%7Etplv-tiktokx-cropcenter_1080_1080.jpeg' },
-            { id: 2, name: 'hawzhin_brand', image: 'https://github.com/6y6qa/volting/blob/main/a9c87d048e20a81e0e7d853e411ccd8b~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 3, name: 'karai_dalakk', image: 'https://github.com/6y6qa/volting/blob/main/cfbd67a5ddc60c2ef7eae30e2d60b4e7~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 4, name: 'nima_haircut', image: 'https://github.com/6y6qa/volting/blob/main/7332766701900103685~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 5, name: 'Karsaz Barber', image: 'https://github.com/6y6qa/volting/blob/main/d4883d8732e5670414f57369789871a4~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 6, name: 'Aumid Style', image: 'https://github.com/6y6qa/volting/blob/main/d3d8132ad44206e1bfeee557a798a52c~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 7, name: 'halo_dalak1', image: 'https://github.com/6y6qa/volting/blob/main/e783187429ac3fd095bbb46c4a59d3b6~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 8, name: 'makocutz', image: 'https://github.com/6y6qa/volting/blob/main/888cee5a5adab1ee9d6c92c639533c90~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 9, name: 'hamay.haircutt', image: 'https://github.com/6y6qa/volting/blob/main/ca1a9971bfd705a5edb0c7d243f182f3~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 10, name: 'zanyar_dalak', image: 'https://github.com/6y6qa/volting/blob/main/c6abe67159fd9eeca1e8ab844d93ec31~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 11, name: 'Hiwa dalak', image: 'https://github.com/6y6qa/volting/blob/main/0d41a383218ce0c981406b1d39e81dc8~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 12, name: 'Arin-dalak', image: 'https://github.com/6y6qa/volting/blob/main/a592ef3b4700fa21731ae50d083724cc~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 13, name: 'bawan_dalak', image: 'https://github.com/6y6qa/volting/blob/main/207f625cb423cbc0e9b7027a8c81c6e9~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 14, name: 'sarkar barber', image: 'https://github.com/6y6qa/volting/blob/main/dae081653141a50991147c6d4bb89421~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 15, name: 'Kawan Barber', image: 'https://github.com/6y6qa/volting/blob/main/3b0db34f3c178dc0e62b77e1b63448d3~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 16, name: 'shameran_barber', image: 'https://github.com/6y6qa/volting/blob/main/49ddc5ceab0e813da52951c158e2a2f9~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 17, name: 'Hoshdar Barber', image: 'https://github.com/6y6qa/volting/blob/main/4ee7df7915239289050591225fc6d7ad~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 18, name: 'Rebaz Barber', image: 'https://github.com/6y6qa/volting/blob/main/84cf698f0f2a950ff98d1dfc36598fed~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 19, name: 'Sultan Style', image: 'https://github.com/6y6qa/volting/blob/main/82f54e561f2cd6efe8a2aaf2f2a3f6d8~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 20, name: 'psha_almany', image: 'https://github.com/6y6qa/volting/blob/main/5c7f5150ce1974b5310e67c604a7a81d~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 21, name: 'Reka style', image: 'https://github.com/6y6qa/volting/blob/main/3dc90c2939875a120939340a5f046dbe~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 22, name: 'saro_style', image: 'https://github.com/6y6qa/volting/blob/main/7c10ffc12e8a27e76f547140e36423f4~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 23, name: 'alay haji', image: 'https://github.com/6y6qa/volting/blob/main/928a7694c5364e8be5db7f2b23edfb3f~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 24, name: 'Zhila Barber', image: 'https://github.com/6y6qa/volting/blob/main/36e958d80730b44515669b462f7bd168~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 25, name: 'azmir_cutz', image: 'https://github.com/6y6qa/volting/blob/main/552cf0498b529f3777d7a21456c3d657~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 26, name: 'Yad Dalak', image: 'https://github.com/6y6qa/volting/blob/main/698e267ea29616581d2a1964a92ac268~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 27, name: 'nawabarber', image: 'https://github.com/6y6qa/volting/blob/main/c67219486a230c91a8301f8a67a063a4~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 28, name: 'Shako cutz', image: 'https://github.com/6y6qa/volting/blob/main/94c9361145c21e1ca870bafb900cd36e~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 29, name: 'Paiay rash', image: 'https://github.com/6y6qa/volting/blob/main/f21c9e0189812125cbfc8c6f98eabb1e~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 30, name: 'Arsh Style', image: 'https://github.com/6y6qa/volting/blob/main/0c96945714ec5ba235db98520aeda981~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 31, name: 'Hamo Styli', image: 'https://github.com/6y6qa/volting/blob/main/ba59a521ea96b74539561a7805e025c8~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 32, name: 'barez halaq', image: 'https://github.com/6y6qa/volting/blob/main/a222dd507febe69fc7390aaa3f8a00ef~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 33, name: 'mamad_halaq', image: 'https://github.com/6y6qa/volting/blob/main/e152f3ec52a31e326e20dab56d7b9a4e~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 34, name: 'Rastgo barber', image: 'https://github.com/6y6qa/volting/blob/main/41ce743480c7c61eff4927ca93003c5d~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 35, name: 'kozhaa', image: 'https://github.com/6y6qa/volting/blob/main/ab0ac9e26055f4ae0e3fff86c787f7aa~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 36, name: 'Aland Hadi', image: 'https://github.com/6y6qa/volting/blob/main/d044519360c5ec8f0dd291ec7a7d5643~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 37, name: 'ashkan style', image: 'https://github.com/6y6qa/volting/blob/main/ff3dafb54bc2ae0fdb809e86eb0c371d~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 38, name: 'Bukhary Ismail', image: 'https://github.com/6y6qa/volting/blob/main/fb84001db4a078541e589d3ee9e24cad~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 39, name: 'kosar oldbarber', image: 'https://github.com/6y6qa/volting/blob/main/48326dfb001bbdc631e8736f2836186a~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=truee' },
-            { id: 40, name: 'roma center', image: 'https://github.com/6y6qa/volting/blob/main/dfe56c541c252dd3bb75eeef24f1648a~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true' },
-            { id: 41, name: 'shadoo barber', image: 'https://github.com/6y6qa/volting/blob/main/458741581_434254289651526_7609368880645781196_n.jpg?raw=true' },
-            { id: 42, name: 'Hawre Gentlemens', image: 'https://i.ibb.co/C3FnWGDQ/460318034-830052395878813-3386346319220530068-n.jpg' },
-            { id: 43, name: 'Farhang Cutz', image: 'https://i.ibb.co/C3YKDn00/30a7f9449e4cc556f604e1e2245d585c-tplv-tiktokx-cropcenter-1080-1080.jpg' },
-            { id: 44, name: 'Shapol Barber', image: 'https://i.ibb.co/Q3YMgVvd/3a6e703725777666374874baf4f6d837-tplv-tiktokx-cropcenter-1080-1080.jpg' }
-        ];
-        
+        // Set the date when results will be announced
+        // Baghdad timezone: January 5, 2026 at 8:00 PM
+        const resultsDate = new Date('2026-01-05T20:00:00+03:00').getTime();
 
-        function renderBarbers() {
-            const grid = document.getElementById('barbersGrid');
-            grid.innerHTML = barbers.map(barber => `
-                <div class="barber-item" data-id="${barber.id}">
-                    <input type="radio" name="barber" id="barber${barber.id}" value="${barber.id}">
-                    <label for="barber${barber.id}" class="barber-label">
-                        <div class="barber-image-container">
-                            <img src="${barber.image}" alt="${barber.name}" class="barber-image">
-                            <div class="check-icon"></div>
-                        </div>
-                        <div class="barber-name">${barber.name}</div>
-                    </label>
-                </div>
-            `).join('');
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = resultsDate - now;
 
-            document.querySelectorAll('input[name="barber"]').forEach(radio => {
-                radio.addEventListener('change', handleSelection);
-            });
+            if (distance < 0) {
+                // Results are ready - redirect to leaderboard
+                window.location.href = '/res.html';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
         }
 
-        function handleSelection(e) {
-            document.querySelectorAll('.barber-item').forEach(item => {
-                item.classList.remove('selected');
-            });
-            
-            const selectedItem = e.target.closest('.barber-item');
-            selectedItem.classList.add('selected');
-            
-            document.getElementById('submitBtn').disabled = false;
-        }
-        function getVoterId() {
-            let id = localStorage.getItem('voter_id')
-            if (!id) {
-                id = crypto.randomUUID()
-                localStorage.setItem('voter_id', id)
-            }
-            return id
-        }
-        document.getElementById('submitBtn').addEventListener('click', async function () {
-            const selectedRadio = document.querySelector('input[name="barber"]:checked')
-            if (!selectedRadio) return
-
-            const barber = barbers.find(b => b.id === parseInt(selectedRadio.value))
-            const voter_id = getVoterId()
-
-            const res = await fetch('/.netlify/functions/vote', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    voter_id,
-                    barber_id: barber.id,
-                    barber_name: barber.name
-                })
-            })
-
-            if (res.status === 403) {
-                alert('❌ تۆ پێشتر دەنگت داوە')
-                return
-            }
-            if (res.ok) {
-                const successMsg = document.getElementById('successMessage')
-                successMsg.style.display = 'block'
-                successMsg.innerHTML = `✅ سوپاس! دەنگەکەت بۆ ${barber.name} تۆمارکرا`
-
-                document.getElementById('submitBtn').disabled = true
-            }
-        })
-
-        renderBarbers();
+        // Update countdown every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
-
 </html>
-
-
-
-
-
