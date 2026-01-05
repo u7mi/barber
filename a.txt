@@ -1,0 +1,266 @@
+[
+     {
+    "id": 3,
+    "name": "karai_dalakk",
+    "image": "https://github.com/6y6qa/volting/blob/main/cfbd67a5ddc60c2ef7eae30e2d60b4e7~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 22951
+  },
+  {
+    "id": 2,
+    "name": "hawzhin_brand",
+    "image": "https://github.com/6y6qa/volting/blob/main/a9c87d048e20a81e0e7d853e411ccd8b~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 20802
+  },
+  {
+    "id": 5,
+    "name": "Karsaz Barber",
+    "image": "https://github.com/6y6qa/volting/blob/main/d4883d8732e5670414f57369789871a4~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 19981
+  },
+  {
+    "id": 1,
+    "name": "mira.barber",
+    "image": "https://raw.githubusercontent.com/6y6qa/volting/refs/heads/main/7334533090053718034%7Etplv-tiktokx-cropcenter_1080_1080.jpeg",
+    "votes": 14757
+  },
+  {
+    "id": 30,
+    "name": "Arsh Style",
+    "image": "https://github.com/6y6qa/volting/blob/main/0c96945714ec5ba235db98520aeda981~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 14699
+  },
+  {
+    "id": 35,
+    "name": "kozhaa",
+    "image": "https://github.com/6y6qa/volting/blob/main/ab0ac9e26055f4ae0e3fff86c787f7aa~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 5797
+  },
+  {
+    "id": 21,
+    "name": "Reka style",
+    "image": "https://github.com/6y6qa/volting/blob/main/3dc90c2939875a120939340a5f046dbe~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 4989
+  },
+  {
+    "id": 11,
+    "name": "Hiwa dalak",
+    "image": "https://github.com/6y6qa/volting/blob/main/0d41a383218ce0c981406b1d39e81dc8~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 4282
+  },
+  {
+    "id": 32,
+    "name": "barez halaq",
+    "image": "https://github.com/6y6qa/volting/blob/main/a222dd507febe69fc7390aaa3f8a00ef~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 1742
+  },
+  {
+    "id": 15,
+    "name": "Kawan Barber",
+    "image": "https://github.com/6y6qa/volting/blob/main/3b0db34f3c178dc0e62b77e1b63448d3~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 1549
+  },
+  {
+    "id": 4,
+    "name": "nima_haircut",
+    "image": "https://github.com/6y6qa/volting/blob/main/7332766701900103685~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 1361
+  },
+  {
+    "id": 44,
+    "name": "Shapol Barber",
+    "image": "https://i.ibb.co/Q3YMgVvd/3a6e703725777666374874baf4f6d837-tplv-tiktokx-cropcenter-1080-1080.jpg",
+    "votes": 1246
+  },
+  {
+    "id": 24,
+    "name": "Zhila Barber",
+    "image": "https://github.com/6y6qa/volting/blob/main/36e958d80730b44515669b462f7bd168~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 792
+  },
+  {
+    "id": 43,
+    "name": "Farhang Cutz",
+    "image": "https://i.ibb.co/C3YKDn00/30a7f9449e4cc556f604e1e2245d585c-tplv-tiktokx-cropcenter-1080-1080.jpg",
+    "votes": 595
+  },
+  {
+    "id": 23,
+    "name": "alay haji",
+    "image": "https://github.com/6y6qa/volting/blob/main/928a7694c5364e8be5db7f2b23edfb3f~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 503
+  },
+  {
+    "id": 28,
+    "name": "Shako cutz",
+    "image": "https://github.com/6y6qa/volting/blob/main/94c9361145c21e1ca870bafb900cd36e~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 448
+  },
+  {
+    "id": 10,
+    "name": "zanyar_dalak",
+    "image": "https://github.com/6y6qa/volting/blob/main/c6abe67159fd9eeca1e8ab844d93ec31~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 444
+  },
+  {
+    "id": 22,
+    "name": "saro_style",
+    "image": "https://github.com/6y6qa/volting/blob/main/7c10ffc12e8a27e76f547140e36423f4~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 441
+  },
+  {
+    "id": 33,
+    "name": "mamad_halaq",
+    "image": "https://github.com/6y6qa/volting/blob/main/e152f3ec52a31e326e20dab56d7b9a4e~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 433
+  },
+  {
+    "id": 40,
+    "name": "roma center",
+    "image": "https://github.com/6y6qa/volting/blob/main/dfe56c541c252dd3bb75eeef24f1648a~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 392
+  },
+  {
+    "id": 6,
+    "name": "Aumid Style",
+    "image": "https://github.com/6y6qa/volting/blob/main/d3d8132ad44206e1bfeee557a798a52c~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 386
+  },
+  {
+    "id": 31,
+    "name": "Hamo Styli",
+    "image": "https://github.com/6y6qa/volting/blob/main/ba59a521ea96b74539561a7805e025c8~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 325
+  },
+  {
+    "id": 16,
+    "name": "shameran_barber",
+    "image": "https://github.com/6y6qa/volting/blob/main/49ddc5ceab0e813da52951c158e2a2f9~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 309
+  },
+  {
+    "id": 18,
+    "name": "Rebaz Barber",
+    "image": "https://github.com/6y6qa/volting/blob/main/84cf698f0f2a950ff98d1dfc36598fed~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 289
+  },
+  {
+    "id": 20,
+    "name": "psha_almany",
+    "image": "https://github.com/6y6qa/volting/blob/main/5c7f5150ce1974b5310e67c604a7a81d~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 287
+  },
+  {
+    "id": 14,
+    "name": "sarkar barber",
+    "image": "https://github.com/6y6qa/volting/blob/main/dae081653141a50991147c6d4bb89421~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 263
+  },
+  {
+    "id": 19,
+    "name": "Sultan Style",
+    "image": "https://github.com/6y6qa/volting/blob/main/82f54e561f2cd6efe8a2aaf2f2a3f6d8~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 250
+  },
+  {
+    "id": 12,
+    "name": "Arin-dalak",
+    "image": "https://github.com/6y6qa/volting/blob/main/a592ef3b4700fa21731ae50d083724cc~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 249
+  },
+  {
+    "id": 7,
+    "name": "halo_dalak1",
+    "image": "https://github.com/6y6qa/volting/blob/main/e783187429ac3fd095bbb46c4a59d3b6~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 244
+  },
+  {
+    "id": 8,
+    "name": "makocutz",
+    "image": "https://github.com/6y6qa/volting/blob/main/888cee5a5adab1ee9d6c92c639533c90~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 226
+  },
+  {
+    "id": 27,
+    "name": "nawabarber",
+    "image": "https://github.com/6y6qa/volting/blob/main/c67219486a230c91a8301f8a67a063a4~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 202
+  },
+  {
+    "id": 9,
+    "name": "hamay.haircutt",
+    "image": "https://github.com/6y6qa/volting/blob/main/ca1a9971bfd705a5edb0c7d243f182f3~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 197
+  },
+  {
+    "id": 42,
+    "name": "Hawre Gentlemens",
+    "image": "https://i.ibb.co/C3FnWGDQ/460318034-830052395878813-3386346319220530068-n.jpg",
+    "votes": 179
+  },
+  {
+    "id": 26,
+    "name": "Yad Dalak",
+    "image": "https://github.com/6y6qa/volting/blob/main/698e267ea29616581d2a1964a92ac268~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 167
+  },
+  {
+    "id": 25,
+    "name": "azmir_cutz",
+    "image": "https://github.com/6y6qa/volting/blob/main/552cf0498b529f3777d7a21456c3d657~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 152
+  },
+  {
+    "id": 13,
+    "name": "bawan_dalak",
+    "image": "https://github.com/6y6qa/volting/blob/main/207f625cb423cbc0e9b7027a8c81c6e9~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 140
+  },
+  {
+    "id": 29,
+    "name": "Paiay rash",
+    "image": "https://github.com/6y6qa/volting/blob/main/f21c9e0189812125cbfc8c6f98eabb1e~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 132
+  },
+  {
+    "id": 41,
+    "name": "shadoo barber",
+    "image": "https://github.com/6y6qa/volting/blob/main/458741581_434254289651526_7609368880645781196_n.jpg?raw=true",
+    "votes": 123
+  },
+  {
+    "id": 37,
+    "name": "ashkan style",
+    "image": "https://github.com/6y6qa/volting/blob/main/ff3dafb54bc2ae0fdb809e86eb0c371d~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 116
+  },
+  {
+    "id": 17,
+    "name": "Hoshdar Barber",
+    "image": "https://github.com/6y6qa/volting/blob/main/4ee7df7915239289050591225fc6d7ad~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 96
+  },
+  {
+    "id": 34,
+    "name": "Rastgo barber",
+    "image": "https://github.com/6y6qa/volting/blob/main/41ce743480c7c61eff4927ca93003c5d~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 65
+  },
+  {
+    "id": 36,
+    "name": "Aland Hadi",
+    "image": "https://github.com/6y6qa/volting/blob/main/d044519360c5ec8f0dd291ec7a7d5643~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 61
+  },
+  {
+    "id": 38,
+    "name": "Bukhary Ismail",
+    "image": "https://github.com/6y6qa/volting/blob/main/fb84001db4a078541e589d3ee9e24cad~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 56
+  },
+  {
+    "id": 39,
+    "name": "kosar oldbarber",
+    "image": "https://github.com/6y6qa/volting/blob/main/48326dfb001bbdc631e8736f2836186a~tplv-tiktokx-cropcenter_1080_1080.jpeg?raw=true",
+    "votes": 51
+  }
+]
