@@ -624,119 +624,103 @@ kurdistan@vgrofficial-eg.com                </div>
     </div>
 
     <script>
-        const API_URL = '/.netlify/functions/leaderboard';
+async function loadLeaderboard() {
+    try {
+        const res = await fetch('a.txt');
+        const data = await res.json();
 
-        function closeAlert() {
-            document.getElementById('alertOverlay').classList.add('hidden');
-            document.body.classList.remove('no-scroll');
+        if (!data || data.length === 0) {
+            showError('هیچ دەنگێک تۆمار نەکراوە');
+            return;
         }
 
-        window.addEventListener('DOMContentLoaded', function() {
-            document.body.classList.add('no-scroll');
-            
-            document.getElementById('closeAlertBtn').addEventListener('click', closeAlert);
-        });
+        // sort by votes DESC
+        data.sort((a, b) => b.votes - a.votes);
 
-        async function loadLeaderboard() {
-            try {
-                const response = await fetch(API_URL);
-                
-                if (!response.ok) {
-                    throw new Error('Failed to load data');
-                }
+        displayLeaderboard(data);
 
-                const data = await response.json();
-                
-                if (!data || data.length === 0) {
-                    showError('هیچ دەنگێک تۆمار نەکراوە');
-                    return;
-                }
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
 
-                displayLeaderboard(data);
+    } catch (err) {
+        console.error(err);
+        showError('هەڵەی خوێندنەوەی فایل');
+    }
+}
 
-            } catch (error) {
-                console.error('Error:', error);
-                showError('هەڵەیەک ڕوویدا لە بارکردنی زانیارییەکان');
-            }
-        }
+function closeAlert() {
+    document.getElementById('alertOverlay').classList.add('hidden');
+    document.body.classList.remove('no-scroll');
+}
 
-        function displayLeaderboard(data) {
-            const top3 = data.slice(0, 3);
-            const rest = data.slice(3);
+window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('no-scroll');
+    document.getElementById('closeAlertBtn').addEventListener('click', closeAlert);
+    loadLeaderboard();
+});
 
-            if (top3.length > 0) {
-                displayPodium(top3);
-            }
+function displayLeaderboard(data) {
+    const top3 = data.slice(0, 3);
+    const rest = data.slice(3);
 
-            if (rest.length > 0) {
-                displayRankings(rest);
-                document.getElementById('rankingsSection').style.display = 'block';
-            }
+    if (top3.length) displayPodium(top3);
+    if (rest.length) {
+        displayRankings(rest);
+        document.getElementById('rankingsSection').style.display = 'block';
+    }
+}
 
-            document.getElementById('loading').style.display = 'none';
-            document.getElementById('content').style.display = 'block';
-        }
+function displayPodium(top3) {
+    const container = document.getElementById('podiumContainer');
+    container.innerHTML = '';
 
-        function displayPodium(top3) {
-            const container = document.getElementById('podiumContainer');
-            
-            top3.forEach((barber, index) => {
-                const rank = index + 1;
-                const rankClass = `rank-${rank}`;
-                
-                const podiumItem = document.createElement('div');
-                podiumItem.className = `podium-item ${rankClass}`;
-                podiumItem.style.cursor = 'pointer';
-                podiumItem.onclick = () => window.open('https://www.vgrofficial-eg.com/', '_blank');
-                
-                podiumItem.innerHTML = `
-                    <div class="podium-card">
-                        <div class="rank-badge">${rank}</div>
-                        <img src="${barber.image}" alt="${barber.name}" class="podium-image" onerror="this.src='https://via.placeholder.com/150'">
-                        <div class="podium-name">${barber.name}</div>
-                        <div class="podium-votes">${barber.votes}</div>
-                        <div class="podium-label">دەنگ</div>
-                    </div>
-                    <div class="podium-base">${rank}</div>
-                `;
-                
-                container.appendChild(podiumItem);
-            });
-        }
+    top3.forEach((barber, index) => {
+        const rank = index + 1;
 
-        function displayRankings(rest) {
-            const grid = document.getElementById('rankingsGrid');
-            
-            rest.forEach((barber, index) => {
-                const rank = index + 4;
-                
-                const card = document.createElement('div');
-                card.className = 'ranking-card';
-                card.style.cursor = 'pointer';
-                card.onclick = () => window.open('https://www.vgrofficial-eg.com/', '_blank');
-                
-                card.innerHTML = `
-                    <div class="ranking-number">${rank}</div>
-                    <img src="${barber.image}" alt="${barber.name}" class="ranking-image" onerror="this.src='https://via.placeholder.com/80'">
-                    <div class="ranking-info">
-                        <div class="ranking-name">${barber.name}</div>
-                        <div class="ranking-votes">${barber.votes} <span class="ranking-label">دەنگ</span></div>
-                    </div>
-                `;
-                
-                grid.appendChild(card);
-            });
-        }
+        container.innerHTML += `
+        <div class="podium-item rank-${rank}" onclick="window.open('https://www.vgrofficial-eg.com/', '_blank')">
+            <div class="podium-card">
+                <div class="rank-badge">${rank}</div>
+                <img src="${barber.image}" class="podium-image"
+                     onerror="this.src='https://via.placeholder.com/150'">
+                <div class="podium-name">${barber.name}</div>
+                <div class="podium-votes">${barber.votes}</div>
+                <div class="podium-label">دەنگ</div>
+            </div>
+            <div class="podium-base">${rank}</div>
+        </div>`;
+    });
+}
 
-        function showError(message) {
-            document.getElementById('loading').style.display = 'none';
-            const errorDiv = document.getElementById('error');
-            errorDiv.textContent = message;
-            errorDiv.style.display = 'block';
-        }
+function displayRankings(rest) {
+    const grid = document.getElementById('rankingsGrid');
+    grid.innerHTML = '';
 
-        loadLeaderboard();
-        setInterval(loadLeaderboard, 3000000);
-    </script>
+    rest.forEach((barber, index) => {
+        const rank = index + 4;
+
+        grid.innerHTML += `
+        <div class="ranking-card" onclick="window.open('https://www.vgrofficial-eg.com/', '_blank')">
+            <div class="ranking-number">${rank}</div>
+            <img src="${barber.image}" class="ranking-image"
+                 onerror="this.src='https://via.placeholder.com/80'">
+            <div class="ranking-info">
+                <div class="ranking-name">${barber.name}</div>
+                <div class="ranking-votes">${barber.votes}
+                    <span class="ranking-label">دەنگ</span>
+                </div>
+            </div>
+        </div>`;
+    });
+}
+
+function showError(msg) {
+    document.getElementById('loading').style.display = 'none';
+    const e = document.getElementById('error');
+    e.textContent = msg;
+    e.style.display = 'block';
+}
+</script>
+
 </body>
 </html>
